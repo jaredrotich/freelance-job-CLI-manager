@@ -10,4 +10,9 @@ class Job(Base):
     deadline = Column(Date)
     status = Column(String)
 
-    freelancer_id = Column(Integer, ForeignKey)
+    freelancer_id = Column(Integer, ForeignKey('freelancers.id'))
+    freelancer = relationship("Freelancer", back_populates="jobs")
+    payments = relationship("Payment", back_populates="job")
+
+    def __repr__(self):
+        return f"<Job(id={self.id}, title='{self.title}', status='{self.status}')>"
