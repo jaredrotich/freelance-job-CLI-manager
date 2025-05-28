@@ -15,7 +15,10 @@ def main_menu():
     print("4. Add a new freelancer")
     print("5. Add a new job")
     print("6. Mark job as completed")
-    print("7. Exit")
+    print("7. Search Jobs by Status")
+    print("8. Update Job Status")
+    print("9. Total Earnings per Freelancer")
+    print("10. Exit")
 
 def view_freelancers():
     freelancers = session.query(Freelancer).all()
@@ -58,6 +61,17 @@ def complete_job():
         print("✅ Job marked as completed.")
     else:
         print("❌ Job not found.")
+
+def search_jobs():
+    keyword = input(" Enter job title keyword to search: ").lower()
+    matches = session.query(Job).filter(Job.title.ilike(f"%{keyword}%")).all()
+    
+    if matches:
+        print(f"\nFound {len(matches)} job(s):")
+        for j in matches:
+            print(f" {j.title} | Deadline: {j.deadline} | Freelancer ID: {j.freelancer_id}")
+    else:
+        print(" No matching jobs found.")
 
 def run():
     while True:
