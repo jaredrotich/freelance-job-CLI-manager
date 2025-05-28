@@ -9,7 +9,7 @@ class Freelancer(Base):
     name = Column(String)
     skills = Column(String)
 
-    jobs = relashionsip("Job", back_populates="freelancer")
+    jobs = relationship("Job", back_populates="freelancer")
 
     def __repr__(self):
         return f"<Freelancer(id={self.id}, name='{self.name}', skills='{self.skills}')>"
