@@ -36,7 +36,17 @@ freelance-job-CLI-manager/
 
 2. then cd in to the file created and do 'code .'
 
-3. do pipenv install then pipenv shell to run in remote directory
+3. do pipenv install then pipenv shell to run in virtual environment
+
+
+## License 
+The project is licensed under the Apache License
+
+## Author
+- Built and owned by Rotich Jared
+
+## Running the App
+python3 then the specific file   -i.e python3 db/seed.py to run seed.py
 
 
 
