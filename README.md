@@ -14,8 +14,8 @@ A Powerfull CLI app for freelancers to manage freelancers, jobs, and payments . 
 
 freelance-job-CLI-manager/
 ├── config.py # Database setup and session configuration
-|__main.py
-|__cli.py
+|__main.py     #acts as entry point when running cli
+|__cli.py    #implements interactive command-line to interact with data
 |
 |__db/
 │ ├── migrate.py # Creates database tables
